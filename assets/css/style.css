@@ -2,57 +2,116 @@
 @import url("https://fonts.googleapis.com/css?family=Black+Han+Sans");
 @import url("https://use.fontawesome.com/releases/v5.0.12/css/all.css");
 
-@keyframes AnimationName { 
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+body {
+  overflow: hidden;
+}
+.loadingWrap {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-family: "Black Han Sans", sans-serif;
+  color: white;
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes fadeIn {
-    0% {opacity: 0}
-    100% {opacity: 1}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes horizontal {
-    0% { transform:translateY(  -50px); }
-    100% { transform:translateY(  0px); }
+  0% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @keyframes scale {
-    0% { transform: scale(1.0); }
-    100% { transform: scale(2.0); }
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(2);
+  }
 }
 
 @keyframes spin {
-  0% {transform: rotate(0deg);}
-  100% {transform: rotate(360deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes flash {
-    0% { opacity: 0.2; }
-    50% { opacity: 1; }
-    100% { opacity: 0.2; }
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
 }
 
 @keyframes shake {
-    0% {transform: translate(0px, 0px) rotateZ(0deg)}
-    25% {transform: translate(2px, 2px) rotateZ(1deg)}
-    50% {transform: translate(0px, 2px) rotateZ(0deg)}
-    75% {transform: translate(2px, 0px) rotateZ(-1deg)}
-    100% {transform: translate(0px, 0px) rotateZ(0deg)}
+  0% {
+    transform: translate(0px, 0px) rotateZ(0deg);
+  }
+  25% {
+    transform: translate(2px, 2px) rotateZ(1deg);
+  }
+  50% {
+    transform: translate(0px, 2px) rotateZ(0deg);
+  }
+  75% {
+    transform: translate(2px, 0px) rotateZ(-1deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotateZ(0deg);
+  }
 }
 
-a:link { color:black; text-decoration:none }
-a:visited { color:black; text-decoration:none }
-a:active { color:black; text-decoration:none }
+a:link {
+  color: black;
+  text-decoration: none;
+}
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+a:active {
+  color: black;
+  text-decoration: none;
+}
 
-.spin{
+.spin {
   animation: spin 1.5s linear infinite;
 }
 
-body{
-  background: linear-gradient(#FFAD90, #FFF8DC );
-  background: linear-gradient(45deg, #41BBD9, #FFAD90, #FFCAD4);
+body {
+  background: linear-gradient(#ffad90, #fff8dc);
+  background: linear-gradient(45deg, #41bbd9, #ffad90, #ffcad4);
   background-size: 600% 600%;
   animation: AnimationName 5s ease infinite;
   overflow: hidden;
@@ -60,31 +119,35 @@ body{
   tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-#cover{
+#cover {
   height: 100%;
   width: 100%;
-  background:black;
+  background: black;
   position: absolute;
   z-index: 999;
   transition: all 5s;
 }
 
-#wrapper{
+#wrapper {
   height: 100vh;
   position: relative;
 }
 
-#date{
+.wrapper--hide {
+  opacity: 0;
+}
+
+#date {
   position: absolute;
   font-size: 7vw;
   top: 18%;
   right: 50%;
-  transform: translate(50% ,0%);
-  font-family: 'Black Han Sans', sans-serif;
+  transform: translate(50%, 0%);
+  font-family: "Black Han Sans", sans-serif;
 }
 
 /*  */
-#music{
+#music {
   max-width: 300px;
   position: absolute;
   width: 40%;
@@ -103,35 +166,40 @@ body{
   box-shadow: 10px 10px 30px black;
 }
 
-#art{
+.loading {
+  display: block;
+}
+.loading--deactive {
+  display: none;
+}
+#art {
   width: 50%;
   margin-top: 5%;
 }
 
-#title{
+#title {
   font-size: 3vw;
   margin-top: 1vw;
   width: 100%;
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: "Black Han Sans", sans-serif;
 }
 
 /* #itMic{
   width: 50%;
 } */
 
-.fas{
+.fas {
   font-size: 3.5em;
   margin: 10%;
-  transition: all .5s;
+  transition: all 0.5s;
   cursor: pointer;
 }
 
-
-#dowload{
+#dowload {
   font-size: 3vw;
-  padding: .3em;
+  padding: 0.3em;
   border: solid 1px;
-  margin: .5em 2em 2em 2em;
+  margin: 0.5em 2em 2em 2em;
   -webkit-border-top-left-radius: 20px;
   -webkit-border-top-right-radius: 20px;
   -webkit-border-bottom-right-radius: 20px;
@@ -140,39 +208,38 @@ body{
   cursor: pointer;
 }
 
-#dowload a{
+#dowload a {
   font-family: sans-serif;
   font-size: 3vw;
 }
 
-#dowload:active{
+#dowload:active {
   background: black;
   color: white;
 }
 
 /*  */
 
-#birthdayMs{
+#birthdayMs {
   position: absolute;
   top: 5%;
   transform: translate(50%, 0%);
   right: 50%;
 }
 
-.flag{
+.flag {
   width: 50%;
 }
 
-
-#cake{
+#cake {
   width: 80vw;
   position: absolute;
   bottom: 3%;
   right: 50%;
-  transform: translate(50% ,0%);
+  transform: translate(50%, 0%);
 }
 
-#balloon{
+#balloon {
   width: 20%;
   position: absolute;
   top: 30%;
@@ -182,32 +249,32 @@ body{
   animation: horizontal 1s ease-in-out infinite alternate;
 }
 
-.drink{
+.drink {
   display: none;
 }
 
-.note{
+.note {
   position: absolute;
   width: 15%;
   top: 30%;
   right: 10%;
+  transition: all1s ease;
 }
 
-
-.note:active{
+.note:active {
   animation: scale 1s;
 }
 
-.text{
+.text {
   position: absolute;
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: "Black Han Sans", sans-serif;
   font-size: 2em;
   color: white;
   text-align: center;
   animation: flash 1s infinite;
 }
 
-.text_1::before{
+.text_1::before {
   content: "";
   position: absolute;
   bottom: 140%;
@@ -233,7 +300,7 @@ body{
   background: white;
 }
 
-.text_2::before{
+.text_2::before {
   content: "";
   position: absolute;
   bottom: 140%;
@@ -259,40 +326,39 @@ body{
   background: white;
 }
 
-.text_1{
+.text_1 {
   top: 35%;
   left: 30%;
   animation: flash 2s infinite;
 }
 
-.text_2{
+.text_2 {
   top: 33%;
   right: 28%;
   animation: flash 1s infinite;
 }
 
-.text_3{
+.text_3 {
   top: 80%;
   right: 23%;
   display: none;
 }
 
-#socialBtn{
+#socialBtn {
   text-align: right;
   padding: 0;
   position: absolute;
   bottom: 5%;
   right: 15%;
-  transform: scale(2);
 }
 
-iframe{
+iframe {
   vertical-align: baseline;
   height: 20px;
   width: 106px;
 }
 
-footer{
+footer {
   position: absolute;
   bottom: 0%;
   width: 100%;
@@ -301,20 +367,20 @@ footer{
   font-family: sans-serif;
 }
 
-.clear{
+.clear {
   clear: both;
 }
 
-.right{
+.right {
   float: right;
 }
 
-.left{
+.left {
   float: left;
   transform: scale(-1, 1);
 }
 @media screen and (max-width: 480px) {
-  .text text_3{
+  .text text_3 {
     display: none;
   }
 }
